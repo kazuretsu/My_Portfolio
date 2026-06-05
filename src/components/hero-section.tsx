@@ -32,11 +32,7 @@ export function HeroSection() {
             <span className="dot">.</span>
           </h1>
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-[22px] md:leading-[1.45]">
-            CS student building{" "}
-            <span className="text-foreground">full-stack web apps</span> and
-            tinkering with{" "}
-            <span className="text-foreground">compilers</span>. I care about
-            fast UIs, clean APIs, and code other people can read.
+            {siteConfig.tagline}
           </p>
           <div className="mt-7 flex gap-2.5">
             <Button

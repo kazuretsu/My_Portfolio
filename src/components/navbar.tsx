@@ -34,7 +34,7 @@ export function Navbar() {
             className="inline-block size-2 rounded-sm bg-primary"
             style={{ boxShadow: "0 0 12px var(--primary)" }}
           />
-          {siteConfig.name.toLowerCase().replace(" ", ".")}
+          {siteConfig.brand}
         </a>
 
         {/* Desktop links */}

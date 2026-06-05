@@ -1,22 +1,30 @@
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import { SectionHeader } from "@/components/section-header"
 import { ProjectCard } from "@/components/project-card"
-import { projects } from "@/data/portfolio"
+import { projects, type Category } from "@/data/portfolio"
 
-const FILTERS = [
+const FILTERS: { id: "all" | Category; label: string }[] = [
   { id: "all", label: "All" },
-  { id: "web-apps", label: "Web apps" },
-  { id: "tools", label: "Tools" },
-  { id: "experiments", label: "Experiments" },
-] as const
+  { id: "web", label: "Web" },
+  { id: "mobile", label: "Mobile" },
+  { id: "ai-ml", label: "AI/ML" },
+  { id: "web3", label: "Web3" },
+  { id: "desktop", label: "Desktop" },
+]
 
 export function WorkSection() {
-  const [filter, setFilter] = useState("all")
+  const [filter, setFilter] = useState<"all" | Category>("all")
+
+  // Newest-first; stable sort keeps authored order for equal dates.
+  const sorted = useMemo(
+    () => [...projects].sort((a, b) => b.dateValue.localeCompare(a.dateValue)),
+    [],
+  )
 
   const filtered =
     filter === "all"
-      ? projects
-      : projects.filter((p) => p.category === filter)
+      ? sorted
+      : sorted.filter((p) => p.categories.includes(filter))
 
   return (
     <section id="work" className="mx-auto max-w-[1100px] px-5 pt-24">
@@ -26,11 +34,7 @@ export function WorkSection() {
       <div className="md:ml-[248px]">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {filtered.map((p) => (
-            <ProjectCard
-              key={p.id}
-              project={p}
-              featured={p.featured}
-            />
+            <ProjectCard key={p.id} project={p} />
           ))}
           {filtered.length === 0 && (
             <div className="col-span-full py-10 text-center text-sm text-muted-foreground">
@@ -48,10 +52,10 @@ function FilterTabs({
   onChange,
 }: {
   current: string
-  onChange: (v: string) => void
+  onChange: (v: "all" | Category) => void
 }) {
   return (
-    <div className="inline-flex gap-1 rounded-lg border border-border bg-card p-1">
+    <div className="inline-flex flex-wrap gap-1 rounded-lg border border-border bg-card p-1">
       {FILTERS.map((f) => (
         <button
           key={f.id}

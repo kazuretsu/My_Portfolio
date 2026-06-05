@@ -1,129 +1,263 @@
+export type Category = "web" | "mobile" | "ai-ml" | "web3" | "desktop"
+
 export interface Project {
   id: string
   title: string
+  tagline: string
   description: string
   tags: string[]
-  category: "web-apps" | "tools" | "experiments"
-  featured: boolean
+  categories: Category[]
+  dateLabel: string
+  dateValue: string
+  ongoing?: boolean
+  image?: string
   liveUrl?: string
   sourceUrl?: string
+}
+
+export interface SkillGroup {
+  label: string
+  skills: string[]
 }
 
 export interface SocialLink {
   label: string
   href: string
   sub: string
-  icon: "arrow-up-right" | "arrow-right" | "arrow-down"
+  icon: "github" | "linkedin" | "email" | "whatsapp" | "resume"
 }
 
 export const siteConfig = {
-  name: "Your Name",
+  name: "John Winston Tabada",
+  brand: "kazuretsu",
   tagline:
-    "CS student building full-stack web apps and tinkering with compilers. I care about fast UIs, clean APIs, and code other people can read.",
-  bio: "I'm a final-year computer science student. I taught myself to code in high school, broke a lot of things, and now I build production-grade React apps and CLI tools. When I'm not coding I'm bouldering, reading sci-fi, or losing at chess online.",
+    "Computer Science student at CIT University building full-stack web, mobile, and on-chain apps — with a focus on AI/ML and computer vision.",
+  bio: "I'm a Computer Science student at the Cebu Institute of Technology – University. I build across the whole stack: web platforms, native mobile apps, decentralized dApps, and AI/ML systems — from JavaFX desktop tools to fine-tuned vision models. I care about shipping software people actually use and learning the next hard thing along the way.",
   statusMessage: "Available for internships",
   resumeUrl: "/resume.pdf",
 } as const
 
 export const portraits = [
   { id: "01", caption: "At work", src: null as string | null },
-  { id: "02", caption: "At the crag", src: null as string | null },
-  { id: "03", caption: "Coffee setup", src: null as string | null },
+  { id: "02", caption: "Building", src: null as string | null },
+  { id: "03", caption: "Off the clock", src: null as string | null },
   { id: "04", caption: "Side quest", src: null as string | null },
 ]
 
-export const skills: string[] = [
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Python",
-  "PostgreSQL",
-  "Node.js",
-  "Tailwind",
-  "Linux",
+export const skillGroups: SkillGroup[] = [
+  {
+    label: "Languages",
+    skills: [
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "Java",
+      "Kotlin",
+      "Dart",
+      "SQL",
+      "Solidity",
+    ],
+  },
+  {
+    label: "Frameworks & Libraries",
+    skills: [
+      "Next.js",
+      "React",
+      "Django",
+      "Spring Boot",
+      "FastAPI",
+      "Flutter",
+      "Jetpack Compose",
+      "JavaFX",
+      "Tailwind CSS",
+      "PyTorch",
+      "Hugging Face",
+      "OpenCV",
+    ],
+  },
+  {
+    label: "Databases & Cloud",
+    skills: [
+      "PostgreSQL",
+      "Supabase",
+      "Firebase",
+      "Drizzle ORM",
+      "Cloudinary",
+      "DigitalOcean",
+    ],
+  },
+  {
+    label: "Developer Tools",
+    skills: ["Git", "GitHub", "Docker", "Hardhat", "Figma", "VS Code"],
+  },
+  {
+    label: "AI / ML",
+    skills: [
+      "Vision-Language Models",
+      "LoRA Fine-Tuning",
+      "RAG",
+      "Computer Vision",
+    ],
+  },
 ]
 
+// Authored newest-first; rendered via a stable sort on dateValue (desc).
 export const projects: Project[] = [
   {
-    id: "algoviz",
-    title: "Algoviz",
-    featured: true,
-    category: "web-apps",
+    id: "agarthavision",
+    title: "AgarthaVision",
+    tagline: "AI detection of soil-transmitted helminth eggs",
     description:
-      "Interactive algorithm visualizer for sorting & graph traversal. 60fps canvas, hand-rolled scrubber, dark/light themes.",
-    tags: ["TypeScript", "Canvas", "Vite"],
+      "A Kotlin diagnostic surveillance system that helps medical technologists detect soil-transmitted helminth eggs through continuous microscope slide capture, real-time AI inference, human-in-the-loop verification, and cloud-synced session reporting.",
+    tags: ["Kotlin", "Jetpack Compose", "CameraX", "FastAPI", "YOLOv26"],
+    categories: ["mobile", "ai-ml"],
+    dateLabel: "Ongoing",
+    dateValue: "9999-99",
+    ongoing: true,
   },
   {
-    id: "mealpath",
-    title: "Mealpath",
-    category: "web-apps",
-    featured: false,
+    id: "propertymanager",
+    title: "PropertyManager",
+    tagline: "Multi-tenant property management dashboard",
     description:
-      "Meal planner that turns the contents of your fridge into a week of recipes. Server-actioned RAG on a small fine-tuned model.",
-    tags: ["Next.js", "Postgres", "OpenAI"],
+      "A multi-tenant property management platform where real estate managers organize properties, upload and view documents with secure cloud storage, track units, and monitor portfolio stats through an interactive dashboard.",
+    tags: ["Next.js", "PostgreSQL", "Drizzle ORM", "Better Auth", "shadcn/ui"],
+    categories: ["web"],
+    dateLabel: "Ongoing",
+    dateValue: "9999-98",
+    ongoing: true,
   },
   {
-    id: "stacktrace",
-    title: "Stacktrace",
-    category: "web-apps",
-    featured: false,
+    id: "asta",
+    title: "ASTA",
+    tagline: "AI seasonal color & skin-tone analysis",
     description:
-      "Minimal dev journal with markdown, code highlighting, and full-text tag search. Runs on a $5 VPS.",
-    tags: ["React", "SQLite", "Fly.io"],
+      "A skin tone analysis tool that uses a fine-tuned Vision-Language Model to classify seasonal color types from facial images and provide personalized color palettes, outfit suggestions, and makeup recommendations.",
+    tags: ["Streamlit", "PyTorch", "Hugging Face", "OpenCV", "LoRA"],
+    categories: ["ai-ml"],
+    dateLabel: "May 2026",
+    dateValue: "2026-05",
   },
   {
-    id: "tinyc",
-    title: "tinyc",
-    category: "tools",
-    featured: false,
+    id: "agarthakayak",
+    title: "AgarthaKayak",
+    tagline: "Decentralized legal escrow for freelancers",
     description:
-      "Toy C → WASM compiler. Lexer, parser, three-address IR, register allocator.",
-    tags: ["Rust", "WASM"],
+      "A decentralized legal escrow platform for freelancers that enforces trustless payments through multi-signature smart contracts, with role-based workflows for clients, freelancers, and legal arbiters, document hashing for agreement verification, and an on-chain CPRA compliance ledger aligned with Philippine legal standards.",
+    tags: ["Next.js", "Solidity", "Polkadot EVM", "Hardhat", "wagmi"],
+    categories: ["web3"],
+    dateLabel: "May 2026",
+    dateValue: "2026-05",
   },
   {
-    id: "dotfiles",
-    title: "dotfiles",
-    category: "tools",
-    featured: false,
+    id: "agarthatech",
+    title: "AgarthaTech",
+    tagline: "Decentralized legal escrow for freelancers",
     description:
-      "My zsh + nvim + tmux setup, idempotent across macOS and Linux.",
-    tags: ["Bash", "Lua"],
+      "A decentralized legal escrow platform for freelancers that enforces trustless payments through multi-signature smart contracts, with role-based workflows for clients, freelancers, and legal arbiters, document hashing for agreement verification, and an on-chain CPRA compliance ledger aligned with Philippine legal standards.",
+    tags: ["Next.js", "Solidity", "Polkadot EVM", "Hardhat", "wagmi"],
+    categories: ["web3"],
+    dateLabel: "Mar 2026",
+    dateValue: "2026-03",
   },
   {
-    id: "pomotrack",
-    title: "Pomotrack",
-    category: "experiments",
-    featured: false,
+    id: "turolink",
+    title: "TuroLink",
+    tagline: "Offline peer-to-peer classroom platform",
     description:
-      "Pomodoro timer with a weekly heatmap. Installs as a PWA on mobile.",
-    tags: ["Svelte", "PWA"],
+      "A Flutter peer-to-peer classroom platform that enables offline learning through direct device connectivity, real-time document sharing, QR-based pairing, on-device AI assistance with Google Gemma, and PDF generation.",
+    tags: ["Flutter", "Gemma", "SQFlite", "Syncfusion"],
+    categories: ["mobile", "ai-ml"],
+    dateLabel: "Mar 2026",
+    dateValue: "2026-03",
+  },
+  {
+    id: "dunzo",
+    title: "Dunzo",
+    tagline: "Team project & task management platform",
+    description:
+      "A full-stack project management platform where teams organize projects, assign and track tasks, manage members with role-based access, schedule calendar events, view activity timelines, and monitor progress through a centralized dashboard.",
+    tags: ["Django", "React", "Vite", "Tailwind CSS", "Supabase"],
+    categories: ["web"],
+    dateLabel: "Dec 2025",
+    dateValue: "2025-12",
+  },
+  {
+    id: "navcit",
+    title: "NavCIT",
+    tagline: "Indoor campus navigation with an AI guide",
+    description:
+      "An indoor campus navigation system for CIT University featuring interactive floor-plan visualization, A* pathfinding with turn-by-turn directions, room search, user reviews, and an AI-powered campus guide chatbot using RAG.",
+    tags: ["React", "Spring Boot", "PostgreSQL", "Tailwind CSS", "Groq AI"],
+    categories: ["web", "ai-ml"],
+    dateLabel: "Dec 2025",
+    dateValue: "2025-12",
+  },
+  {
+    id: "vetality",
+    title: "Vetality Shop",
+    tagline: "E-commerce for veterinary & agri supplies",
+    description:
+      "A Kotlin e-commerce app for veterinary and agricultural supplies with product browsing, cart management, wishlist, multi-step checkout, and order tracking.",
+    tags: ["Kotlin", "Firebase", "Cloudinary"],
+    categories: ["mobile"],
+    dateLabel: "May 2025",
+    dateValue: "2025-05",
+  },
+  {
+    id: "kentlink",
+    title: "KentLink",
+    tagline: "PPPoE account & connection management",
+    description:
+      "A JavaFX PPPoE management system with MikroTik integration that lets administrators manage PPPoE user accounts, monitor connections, and assign IP addresses over a shared Ethernet network.",
+    tags: ["JavaFX", "MikroTik", "Networking"],
+    categories: ["desktop"],
+    dateLabel: "May 2025",
+    dateValue: "2025-05",
+  },
+  {
+    id: "csvparser",
+    title: "CSVParser",
+    tagline: "CSV voucher codes → formatted multi-card PDFs",
+    description:
+      "A JavaFX application that reads voucher codes from CSV files and combines them with customizable parameters to produce formatted, multi-card PDF documents.",
+    tags: ["JavaFX", "Java", "PDF"],
+    categories: ["desktop"],
+    dateLabel: "Mar 2025",
+    dateValue: "2025-03",
   },
 ]
 
 export const socialLinks: SocialLink[] = [
   {
     label: "GitHub",
-    sub: "@yourname",
-    href: "https://github.com/yourname",
-    icon: "arrow-up-right",
+    sub: "@kazuretsu",
+    href: "https://github.com/kazuretsu",
+    icon: "github",
   },
   {
     label: "LinkedIn",
-    sub: "in/yourname",
-    href: "https://linkedin.com/in/yourname",
-    icon: "arrow-up-right",
+    sub: "in/jwtabada",
+    href: "https://linkedin.com/in/jwtabada",
+    icon: "linkedin",
   },
   {
     label: "Email",
-    sub: "hi@yourname.dev",
-    href: "mailto:hi@yourname.dev",
-    icon: "arrow-right",
+    sub: "JW.Tabada@proton.me",
+    href: "mailto:JW.Tabada@proton.me",
+    icon: "email",
+  },
+  {
+    label: "WhatsApp",
+    sub: "+63 995 962 0840",
+    href: "https://wa.me/639959620840",
+    icon: "whatsapp",
   },
   {
     label: "Résumé (PDF)",
-    sub: "1 page, May 2026",
+    sub: "Updated June 2026",
     href: "/resume.pdf",
-    icon: "arrow-down",
+    icon: "resume",
   },
 ]
 
