@@ -18,10 +18,11 @@ I build across the whole stack — web platforms, native mobile apps, decentrali
 ## Skills
 
 - **Languages:** Python, TypeScript, JavaScript, Java, Kotlin, Dart, SQL, Solidity
-- **Frameworks & Libraries:** Next.js, React, Django, Spring Boot, FastAPI, Flutter, Jetpack Compose, JavaFX, Tailwind CSS, PyTorch, Hugging Face Transformers, OpenCV
+- **Frameworks & Libraries:** Next.js, React, Django, Spring Boot, FastAPI, Flutter, Jetpack Compose, JavaFX, Tailwind CSS, shadcn/ui, Streamlit, PyTorch, Hugging Face Transformers, OpenCV
 - **Databases & Cloud:** PostgreSQL, Supabase, Firebase, Drizzle ORM, Cloudinary, DigitalOcean
-- **Developer Tools:** Git, GitHub, Docker, Hardhat, Figma, VS Code
-- **AI / ML:** Vision-Language Models, LoRA Fine-Tuning, RAG, Computer Vision
+- **Developer Tools:** Git, GitHub, Docker, Vite, Figma, VS Code
+- **Web3 & Blockchain:** Hardhat, wagmi, RainbowKit, Mesh SDK, Blockfrost, Cardano, Polkadot EVM, Smart Contracts
+- **AI / ML:** Vision-Language Models, LoRA Fine-Tuning, RAG, Computer Vision (YOLO, EfficientNet)
 
 ## Projects
 
@@ -30,7 +31,7 @@ I build across the whole stack — web platforms, native mobile apps, decentrali
 | AgarthaVision | Ongoing | AI detection of soil-transmitted helminth eggs for medical technologists | Kotlin, Jetpack Compose, CameraX, FastAPI, YOLOv26 |
 | PropertyManager | Ongoing | Multi-tenant property management dashboard with secure document storage | Next.js, PostgreSQL, Drizzle ORM, Better Auth, shadcn/ui |
 | ASTA | May 2026 | AI seasonal color & skin-tone analysis using a fine-tuned VLM | Streamlit, PyTorch, Hugging Face, OpenCV, LoRA |
-| AgarthaKayak | May 2026 | Decentralized legal escrow for freelancers on Polkadot EVM | Next.js, Solidity, Polkadot EVM, Hardhat, wagmi |
+| AgarthaKayak | May 2026 | Blockchain-witnessed cooperative credit ledger on Cardano | Next.js, TypeScript, Supabase, Cardano, Blockfrost, Mesh SDK |
 | AgarthaTech | Mar 2026 | Decentralized legal escrow for freelancers on Polkadot EVM | Next.js, Solidity, Polkadot EVM, Hardhat, wagmi |
 | TuroLink | Mar 2026 | Offline peer-to-peer classroom platform with on-device AI | Flutter, Gemma, SQFlite, Syncfusion |
 | Dunzo | Dec 2025 | Team project & task management platform | Django, React, Vite, Tailwind CSS, Supabase |

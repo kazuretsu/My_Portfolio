@@ -70,6 +70,8 @@ export const skillGroups: SkillGroup[] = [
       "Jetpack Compose",
       "JavaFX",
       "Tailwind CSS",
+      "shadcn/ui",
+      "Streamlit",
       "PyTorch",
       "Hugging Face",
       "OpenCV",
@@ -88,7 +90,20 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: "Developer Tools",
-    skills: ["Git", "GitHub", "Docker", "Hardhat", "Figma", "VS Code"],
+    skills: ["Git", "GitHub", "Docker", "Vite", "Figma", "VS Code"],
+  },
+  {
+    label: "Web3 & Blockchain",
+    skills: [
+      "Hardhat",
+      "wagmi",
+      "RainbowKit",
+      "Mesh SDK",
+      "Blockfrost",
+      "Cardano",
+      "Polkadot EVM",
+      "Smart Contracts",
+    ],
   },
   {
     label: "AI / ML",
@@ -96,7 +111,7 @@ export const skillGroups: SkillGroup[] = [
       "Vision-Language Models",
       "LoRA Fine-Tuning",
       "RAG",
-      "Computer Vision",
+      "Computer Vision (YOLO, EfficientNet)",
     ],
   },
 ]
@@ -141,10 +156,10 @@ export const projects: Project[] = [
   {
     id: "agarthakayak",
     title: "AgarthaKayak",
-    tagline: "Decentralized legal escrow for freelancers",
+    tagline: "On-chain ledger for community credit groups",
     description:
-      "A decentralized legal escrow platform for freelancers that enforces trustless payments through multi-signature smart contracts, with role-based workflows for clients, freelancers, and legal arbiters, document hashing for agreement verification, and an on-chain CPRA compliance ledger aligned with Philippine legal standards.",
-    tags: ["Next.js", "Solidity", "Polkadot EVM", "Hardhat", "wagmi"],
+      "A full-stack cooperative ledger that lets community credit groups transparently record and audit member activity, loan approvals, repayments, treasury movements, and reconciliations — each witnessed on the Cardano blockchain with on-chain metadata receipts.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Cardano", "Blockfrost", "Mesh SDK"],
     categories: ["web3"],
     dateLabel: "May 2026",
     dateValue: "2026-05",
@@ -209,7 +224,7 @@ export const projects: Project[] = [
     title: "KentLink",
     tagline: "PPPoE account & connection management",
     description:
-      "A JavaFX PPPoE management system with MikroTik integration that lets administrators manage PPPoE user accounts, monitor connections, and assign IP addresses over a shared Ethernet network.",
+      "A JavaFX desktop PPPoE management system with MikroTik integration that lets administrators manage PPPoE user accounts, monitor connections, and assign IP addresses over a shared Ethernet network.",
     tags: ["JavaFX", "MikroTik", "Networking"],
     categories: ["desktop"],
     dateLabel: "May 2025",
@@ -220,7 +235,7 @@ export const projects: Project[] = [
     title: "CSVParser",
     tagline: "CSV voucher codes → formatted multi-card PDFs",
     description:
-      "A JavaFX application that reads voucher codes from CSV files and combines them with customizable parameters to produce formatted, multi-card PDF documents.",
+      "A JavaFX desktop application that reads voucher codes from CSV files and combines them with customizable parameters to produce formatted, multi-card PDF documents.",
     tags: ["JavaFX", "Java", "PDF"],
     categories: ["desktop"],
     dateLabel: "Mar 2025",

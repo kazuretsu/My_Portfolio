@@ -37,7 +37,12 @@ const skillIcons: Record<string, IconSpec> = {
   Git: { slug: "git" },
   GitHub: { slug: "github", color: NEUTRAL },
   Docker: { slug: "docker" },
+  Vite: { slug: "vite" },
   Figma: { slug: "figma" },
+  Streamlit: { slug: "streamlit" },
+  "shadcn/ui": { slug: "shadcnui", color: NEUTRAL },
+  Cardano: { slug: "cardano" },
+  "Polkadot EVM": { slug: "polkadot" },
 }
 
 export function skillIconUrl(name: string): string | null {
