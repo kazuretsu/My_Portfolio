@@ -38,10 +38,10 @@ export const siteConfig = {
 } as const
 
 export const portraits = [
-  { id: "01", caption: "At work", src: null as string | null },
-  { id: "02", caption: "Building", src: null as string | null },
-  { id: "03", caption: "Off the clock", src: null as string | null },
-  { id: "04", caption: "Side quest", src: null as string | null },
+  { id: "01", caption: "Catching the sunset", src: "/peak.jpg" },
+  { id: "02", caption: "On the trail", src: "/hiking.jpg" },
+  { id: "03", caption: "Creek break", src: "/hiking_river.jpg" },
+  { id: "04", caption: "Learning to skate", src: "/ice_skating.jpg" },
 ]
 
 export const skillGroups: SkillGroup[] = [
