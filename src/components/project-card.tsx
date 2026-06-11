@@ -66,29 +66,22 @@ export function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
 
-      {/* Links (only when a URL exists) */}
-      {(project.liveUrl || project.sourceUrl) && (
-        <div className="mt-auto flex gap-4 text-[13px]">
-          {project.liveUrl && (
+      {/* Links */}
+      {project.links && project.links.length > 0 && (
+        <div className="mt-auto flex flex-wrap gap-4 text-[13px]">
+          {project.links.map(({ label, href }, i) => (
             <a
-              href={project.liveUrl}
+              key={i}
+              href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-primary no-underline"
+              className={`inline-flex items-center gap-1 no-underline ${
+                i === 0 ? "text-primary" : "text-muted-foreground"
+              }`}
             >
-              Live demo <span className="text-[11px]">↗</span>
+              {label} <span className="text-[11px]">↗</span>
             </a>
-          )}
-          {project.sourceUrl && (
-            <a
-              href={project.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground no-underline"
-            >
-              Source code
-            </a>
-          )}
+          ))}
         </div>
       )}
     </div>

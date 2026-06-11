@@ -11,8 +11,7 @@ export interface Project {
   dateValue: string
   ongoing?: boolean
   image?: string
-  liveUrl?: string
-  sourceUrl?: string
+  links?: { label: string; href: string }[]
 }
 
 export interface SkillGroup {
@@ -124,11 +123,14 @@ export const projects: Project[] = [
     tagline: "AI detection of soil-transmitted helminth eggs",
     description:
       "A Kotlin diagnostic surveillance system that helps medical technologists detect soil-transmitted helminth eggs through continuous microscope slide capture, real-time AI inference, human-in-the-loop verification, and cloud-synced session reporting.",
-    tags: ["Kotlin", "Jetpack Compose", "CameraX", "FastAPI", "YOLOv26"],
+    tags: ["Kotlin", "Jetpack Compose", "CameraX", "FastAPI", "YOLOv26+EfficientNetv2"],
     categories: ["mobile", "ai-ml"],
     dateLabel: "Ongoing",
     dateValue: "9999-99",
     ongoing: true,
+    links: [
+      { label: "GitHub repo", href: "https://github.com/Joryuoo/AgarthaVision"},
+    ]
   },
   {
     id: "propertymanager",
@@ -163,6 +165,9 @@ export const projects: Project[] = [
     categories: ["web3"],
     dateLabel: "May 2026",
     dateValue: "2026-05",
+    links: [
+      { label: "GitHub repo", href: "https://github.com/jojseph/Agartha-Kayak"},
+    ]
   },
   {
     id: "agarthatech",
@@ -174,6 +179,10 @@ export const projects: Project[] = [
     categories: ["web3"],
     dateLabel: "Mar 2026",
     dateValue: "2026-03",
+    links: [
+      { label: "Video demo", href: "https://youtu.be/matqT4GxaT0"},
+      { label: "GitHub repo", href: "https://github.com/kazuretsu/Agartha-Polkadot"},
+    ]
   },
   {
     id: "turolink",
