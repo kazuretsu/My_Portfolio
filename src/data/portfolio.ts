@@ -32,7 +32,7 @@ export const siteConfig = {
   tagline:
     "Computer Science student at CIT University building full-stack web, mobile, and on-chain apps — with a focus on AI/ML and computer vision.",
   bio: "I'm a Computer Science student at the Cebu Institute of Technology – University. I build across the whole stack: web platforms, native mobile apps, decentralized dApps, and AI/ML systems — from JavaFX desktop tools to fine-tuned vision models. I care about shipping software people actually use and learning the next hard thing along the way.",
-  statusMessage: "Available for internships",
+  statusMessage: "Intern at Metawatt LLC",
   resumeUrl: "/resume.pdf",
 } as const
 
